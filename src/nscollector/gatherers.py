@@ -2,15 +2,21 @@
 
 '''
 
-import requests
+from BeautifulSoup import BeautifulSoup as soup
 
 
-def login(nation, password):
-    '''Login and return requests session object.
+def _issues_exist(session, nation):
+    '''Return number of issues if there are issues for the nation else False.
 
     '''
+    bs = soup(session.get('https://www.nationstates.net/nation=%s' % nation).text)
+    issues = bs.findAll('div', {'id': 'notificationnumber-issues'})
+    return issues[0].getText() if issues else False
 
-    payload = {'logging_in': 1, 'nation': nation, 'password': password}
+def process_issues(session, nation):
+    '''If there are issues available, process them based on the Previously
+    Encountered Changes and the attribute weights.
 
-    with requests.Session() as session:
-        return session.post('https://www.nationstates.net', data=payload)
+    '''
+    if _issues_exist(session, nation):
+        print 'issues exist'
