@@ -11,11 +11,11 @@ Encountered issues
 ------------------
 
 When issues are encountered, for a given issue:
-  # lookup the id
-  # see what the Previously Encountered Changes (PEC) are per option
-  # if any of the options have a PEC > 3 (the heighest take weight)
-    select the option with the highest weight
-  # store list of changes to the PEC
+  #. lookup the id
+  #. see what the Previously Encountered Changes (PEC) are per option
+  #. if any of the options have a PEC > 3 (the heighest take weight)
+  #. select the option with the highest weight
+  #. store list of changes to the PEC
 
 
 Issue prioritization
