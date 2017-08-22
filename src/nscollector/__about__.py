@@ -22,8 +22,9 @@ __desc__ \
 __license__ = 'Apache Software License 2.0'
 __package_exclude__ = ['tests']
 __requires__ = [
+    'beautifulsoup',
+    'django',
     'requests',
-    'beautifulsoup'
     ]
 __scripts__ = []
 __version__ = '0.0.1'

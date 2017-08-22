@@ -41,7 +41,7 @@ def main():
     configs = parser.parse_args()
     if 'command' in configs:
         if hasattr(gatherers, configs.command):
-            get_session()
+            get_session(raw_input('Nation: '), getpass.getpass())
             getattr(gatherers, configs.command)(SESSION, NATION)
         else:
             print 'unknown command: %s' % configs.command
