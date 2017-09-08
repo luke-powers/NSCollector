@@ -5,25 +5,26 @@ from django.db import models
 # Create your models here.
 
 
-class Effect(models.Model):
-    effect_name = models.CharField(max_length=255)
+class Census(models.Model):
+    census_id = models.IntegerField()
+    census_name = models.CharField(max_length=255)
     # Set of value ranges and the change for that range. before, after, change.
-    # For incoming effect changes, if the change value is == replace
+    # For incoming census changes, if the change value is == replace
     # stored before with the smallest before and the after with the
     # largest after.
-    effect_ranges = [[0, 0, 0]]
+    census_ranges = [[0, 0, 0]]
 
 
-class EffectsChangesLog(models.Model):
+class CensussChangesLog(models.Model):
     after = models.IntegerField()
     before = models.IntegerField()
     change = models.IntegerField()
-    effect = models.ForeignKey(Effect, on_delete=models.PROTECT)
+    census = models.ForeignKey(Census, on_delete=models.PROTECT)
     issue = models.IntegerField()
 
 
-class EffectPreferences(models.Model):
-    effect = models.ForeignKey(Effect, on_delete=models.PROTECT)
+class CensusPreferences(models.Model):
+    census = models.ForeignKey(Census, on_delete=models.PROTECT)
     nation = models.ForeignKey('Nation', on_delete=models.CASCADE)
     weight = models.IntegerField(default=0)
 
