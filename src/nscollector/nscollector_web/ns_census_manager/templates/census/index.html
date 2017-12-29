@@ -1,0 +1,33 @@
+<html>
+ <head>
+  <style>
+   table {
+   border-collapse: collapse;
+   }
+   table, td, th {
+   border: 2px solid black;
+   }
+   td.numbers {
+   text-align: right;
+   }
+  </style>
+ </head>
+ <body>
+  <div style="margin: 30px">
+  {% if census_list %}
+   <table>
+    <tr><th>Census</th></tr>
+    {% for census in census_list %}
+    <tr>
+     <td>{{ census.get_name }}</td>
+     <!-- <td class="numbers">{{ census.get_value }}</td> -->
+    </tr>
+    {% endfor %}
+   </table>
+  {% else %}
+  <h1>None</h1>
+  {% endif %}
+  <a href='/add/'>Add</a>
+  </div>
+ </body>
+</html>

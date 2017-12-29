@@ -10,6 +10,7 @@ import requests
 NATION = None
 SESSION = None
 
+
 def get_session(nation=None, password=None):
     '''Login and return requests session object.
 

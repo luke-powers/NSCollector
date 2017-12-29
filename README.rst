@@ -7,8 +7,8 @@ How it works
 ============
 
 
-Encountered issues
-------------------
+Encountered census issues
+-------------------------
 
 When issues are encountered, for a given issue:
   #. lookup the id
