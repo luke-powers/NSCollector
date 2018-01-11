@@ -15,19 +15,19 @@
  <body>
   <div style="margin: 30px">
   {% if census_list %}
+   <h1>Census</h1>
    <table>
-    <tr><th>Census</th></tr>
+    <tr><th>Name</th><th></tr>
     {% for census in census_list %}
     <tr>
-     <td>{{ census.get_name }}</td>
-     <!-- <td class="numbers">{{ census.get_value }}</td> -->
+     <td>{{ census.current }}</td>
     </tr>
     {% endfor %}
    </table>
   {% else %}
   <h1>None</h1>
   {% endif %}
-  <a href='/add/'>Add</a>
+  <a href='add/'>Add</a>
   </div>
  </body>
 </html>

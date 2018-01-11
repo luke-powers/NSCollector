@@ -2,16 +2,16 @@
 from django.db import models
 
 
+class Census(models.Model):
+    name = models.CharField(max_length=255)
+
+
 class CensusChangesLog(models.Model):
     current = models.IntegerField()
     before = models.IntegerField()
     id = models.AutoField(primary_key=True, default=0)
     issue = models.IntegerField()
-
-
-class Census(models.Model):
-    name = models.CharField(max_length=255)
-    values = models.ForeignKey(CensusChangesLog, on_delete=models.PROTECT)
+    census = models.ForeignKey(Census, on_delete=models.PROTECT)
 
 
 class CensusPreferences(models.Model):
