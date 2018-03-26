@@ -39,7 +39,7 @@ Install
 
 With python2.7 and pip > 9.0 ::
 
-  sudo pip install ~/path/to/NSCollector
+  sudo -H pip install ~/path/to/NSCollector
 
 Run
 ===
@@ -47,6 +47,12 @@ Run
 See: ::
 
   ns-collector -h
+
+Remove
+======
+
+sudo -H pip uninstall nscollector
+
 
 Notes:
 
