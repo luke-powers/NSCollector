@@ -2,7 +2,7 @@
 
 '''
 
-from BeautifulSoup import BeautifulSoup as soup
+from bs4 import BeautifulSoup as soup
 
 NS = "https://www.nationstates.net"
 

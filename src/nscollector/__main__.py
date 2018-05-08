@@ -3,7 +3,7 @@
 '''
 
 import argparse
-import gatherers
+import nscollector.gatherers as gatherers
 import getpass
 import requests
 

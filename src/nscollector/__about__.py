@@ -29,7 +29,7 @@ __package_exclude__ = ['tests']
 __package_name__ = 'NSCollector'
 __requires__ = [
     'pip>=9.0',
-    'beautifulsoup',
+    'bs4',
     'django',
     'requests',
     ]
