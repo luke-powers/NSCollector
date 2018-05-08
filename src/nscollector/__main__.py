@@ -18,7 +18,7 @@ def get_session(nation=None, password=None):
     global SESSION
     global NATION
     if not nation:
-        NATION = raw_input('nation: ')
+        NATION = input('nation: ')
     else:
         NATION = nation
     if not password:
@@ -42,7 +42,7 @@ def main():
     configs = parser.parse_args()
     if 'command' in configs:
         if hasattr(gatherers, configs.command):
-            get_session(raw_input('Nation: '), getpass.getpass())
+            get_session(input('Nation: '), getpass.getpass())
             getattr(gatherers, configs.command)(SESSION, NATION)
         else:
             print('unknown command: %s' % configs.command)
