@@ -18,7 +18,7 @@ def _get_src_dir(package_name=None):
         dirs_with_about = [dir for dir in os.listdir('src')
                            if '__about__.py' in os.listdir('src/'+dir)]
         if len(dirs_with_about) > 1:
-            print 'More than one source with __about__.py defined, set PY_PACKAGE_NAME and re-run.'
+            print('More than one source with __about__.py defined, set PY_PACKAGE_NAME and re-run.')
             exit
         else:
             ret = os.path.join(BASE_DIR, 'src', dirs_with_about.pop())

@@ -36,11 +36,11 @@ def process_issues(session, nation):
 
     '''
     if _issues_exist(session, nation):
-        print 'issues exist'
+        print('issues exist')
 
 
 def update_issue_census(session, _):
     '''Update the stored list of issue census in the database.
 
     '''
-    print _gather_current_census(session)
+    print([x[1] for x in _gather_current_census(session)])

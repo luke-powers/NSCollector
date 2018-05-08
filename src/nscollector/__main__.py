@@ -45,4 +45,4 @@ def main():
             get_session(raw_input('Nation: '), getpass.getpass())
             getattr(gatherers, configs.command)(SESSION, NATION)
         else:
-            print 'unknown command: %s' % configs.command
+            print('unknown command: %s' % configs.command)

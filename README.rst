@@ -58,4 +58,10 @@ Notes:
 
 Typical test run ::
 
-  sudo pip uninstall --yes nscollector; sudo pip install ~/NSCollector/; ns-collector -h
+  sudo -H pip uninstall --yes nscollector; sudo -H pip install ~/NSCollector/; ns-collector -h
+
+
+Notes
+=====
+
+82 Nation State issues total.
