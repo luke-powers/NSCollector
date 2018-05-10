@@ -61,6 +61,14 @@ Typical test run ::
   sudo -H pip uninstall --yes nscollector; sudo -H pip install ~/NSCollector/; ns-collector -h
 
 
+Tests
+=====
+
+Run with setup.py
+
+python3 setup.py test
+
+
 Notes
 =====
 

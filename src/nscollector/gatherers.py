@@ -7,10 +7,10 @@ from bs4 import BeautifulSoup as soup
 NS = "https://www.nationstates.net"
 
 
-def _extract_text(bs_obj):
+def _strip_word(bs_obj, word):
     txt = bs_obj.getText()
-    if 'Next:' in txt:
-        txt = txt.split('Next: ')[1]
+    if word in txt:
+        txt = txt.split(word)[1]
     return txt
 
 
@@ -20,7 +20,7 @@ def _gather_current_census(session):
     '''
     bs = soup(session.get('%s/page=list_nations?censusid=0' % NS).text, 'lxml')
     census_titles = [
-        (int(c.get('value')), _extract_text(c))
+        (int(c.get('value')), _strip_word(c, 'Next: '))
         for c in bs.findAll('select', {'name': 'censusid'})[0].findAll('option')
     ]
     census = sorted(census_titles, key=lambda x: x[1])
